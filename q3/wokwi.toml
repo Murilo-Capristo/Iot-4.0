@@ -1,0 +1,10 @@
+[wokwi]
+version = 1
+elf = "../.pio/build/q3/firmware.elf"
+firmware = "../.pio/build/q3/firmware.bin"
+board = "esp32-devkit-v1"
+
+[[components]]
+type = "push-button"
+id = "botao"
+pin = 4

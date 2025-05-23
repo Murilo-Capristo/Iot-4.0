@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Murilo",
+  "editor": "wokwi",
+  "serial": {
+    "port": 0,
+    "baud": 115200
+  },
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -20,
+      "left": 100,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "botao",
+      "top": -130,
+      "left": 160,
+      "attrs": { "color": "red", "label": "Ler TAG" }
+    },
+    {
+      "type": "wokwi-oled-i2c",
+      "id": "oled",
+      "top": -130,
+      "left": -70,
+      "attrs": { "width": "128", "height": "64", "address": "0x3C" }
+    }
+  ],
+  "connections": [
+    [ "esp:3V3", "oled:VCC", "red", [ "h-30", "v-100", "h-80" ] ],
+    [ "esp:GND.1", "oled:GND", "black", [ "h-40", "v-80", "h-60" ] ],
+    [ "esp:21", "oled:SDA", "green", [ "v0" ] ],
+    [ "esp:22", "oled:SCL", "blue", [ "v0" ] ],
+    [ "esp:4", "botao:1.l", "green", [ "v0" ] ],
+    [ "esp:GND.2", "botao:2.r", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
